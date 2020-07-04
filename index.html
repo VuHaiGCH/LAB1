@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>LAB 1</title>
+</head>
+<body>
+  <div class="container mx-auto bg-dark p-2">
+    <h1 class="text-center text-light">
+      Currency Converter
+    </h1>
+  <div class="content">
+    <div class="form-check-inline">
+      <label class="form-check-label text-light">
+        <input type="radio" class="form-check-input" name="optradio" id="usd" value="usd">USD
+      </label>
+    </div>
+
+    <div class="form-check-inline">
+      <label class="form-check-label text-light">
+        <input type="radio" class="form-check-input" name="optradio" id="eur" value="eur">EUR
+      </label>
+    </div>
+
+    <div class="form-group" id="input">
+      <input type="text" id="amount" class="form">
+      <button onclick="convertToVnd()">
+        Convert Currency
+      </button>
+    </div>
+    <span id="result" class="text-light"></span>
+  </div>
+
+  </div>
+<script>
+  let result = 0;
+  function convertToVnd() {
+    money = document.getElementById("amount").value;
+    if(document.getElementById("usd").checked){
+      convertUSD();
+      document.getElementById("result").innerHTML = money + " USD is " + result + "VND";
+    }
+    else if(document.getElementById("eur").checked){
+      convertEUR();
+    document.getElementById("result").innerHTML = money + " EUR is " + result + "VND";
+    }
+}
+
+  function convertUSD(){
+    return result = money * 23.2;
+  }
+
+  function convertEUR(){
+    return result = money * 26.1;;
+  }
+
+</script>
+</body>
+</html>
